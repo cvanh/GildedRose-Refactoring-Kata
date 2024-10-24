@@ -1,0 +1,29 @@
+notes
+
+
+3 different items:
+- aged brie
+- backstage passes
+- sulfuras
+
+3 variables: 
+- sellin 
+- quality
+- name
+
+## aged brie
+increases quality everyday
+quality cannot be greater than 50
+
+## Sulfuras
+does not decrease in quality or sell in 
+
+## back stage passes
+increases in quality when sellin is greater than 10
+inscrease by 2 when sellin is between 6-10
+<!-- quality to 0 after concert -->
+
+
+## normal
+normal items decrease in sellin and quality by 1 each day
+quality never drops to 0

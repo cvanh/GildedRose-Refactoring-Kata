@@ -4,31 +4,28 @@ declare(strict_types=1);
 
 namespace Tests\Items;
 
-use GildedRose\GildedRose;
-use GildedRose\Item;
+use GildedRose\Items\Sulfuras;
 use PHPUnit\Framework\TestCase;
 
 class GildedRoseTest extends TestCase
 {
     public function testSulfurasQualityChange(): void
     {
-        $items = [new Item('Sulfuras, Hand of Ragnaros', 0, 0)];
+        $item = new Sulfuras('Sulfuras, Hand of Ragnaros', 0, 0);
 
-        $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $item->update();
 
-        $this->assertSame('Sulfuras, Hand of Ragnaros', $items[0]->name);
-        $this->assertSame(0, $items[0]->quality);
+        $this->assertSame('Sulfuras, Hand of Ragnaros', $item->name);
+        $this->assertSame(0, $item->quality);
     }
 
     public function testSulfurasSellInChange(): void
     {
-        $items = [new Item('Sulfuras, Hand of Ragnaros', 0, 0)];
+        $item = new Sulfuras('Sulfuras, Hand of Ragnaros', 0, 0);
 
-        $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $item->update();
 
-        $this->assertSame('Sulfuras, Hand of Ragnaros', $items[0]->name);
-        $this->assertSame(0, $items[0]->quality);
+        $this->assertSame('Sulfuras, Hand of Ragnaros', $item->name);
+        $this->assertSame(0, $item->sellIn);
     }
 }

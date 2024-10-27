@@ -4,45 +4,41 @@ declare(strict_types=1);
 
 namespace Tests\Items;
 
-use GildedRose\GildedRose;
-use GildedRose\Item;
+use GildedRose\Items\Ticket;
 use PHPUnit\Framework\TestCase;
 
 class TicketTest extends TestCase
 {
     public function testTicketQualityIncreasesSuccess(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 14, 13)];
+        $item = new Ticket('Backstage passes to a TAFKAL80ETC concert', 14, 13);
 
-        $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $item->update();
 
-        $this->assertSame('Backstage passes to a TAFKAL80ETC concert', $items[0]->name);
-        $this->assertSame(14, $items[0]->quality);
-        $this->assertSame(13, $items[0]->sellIn);
+        $this->assertSame('Backstage passes to a TAFKAL80ETC concert', $item->name);
+        $this->assertSame(14, $item->quality);
+        $this->assertSame(13, $item->sellIn);
     }
 
     public function testTicketQualityIncreasesFails(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20)];
+        $item = new Ticket('Backstage passes to a TAFKAL80ETC concert', 15, 20);
 
-        $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $item->update();
 
-        $this->assertSame('Backstage passes to a TAFKAL80ETC concert', $items[0]->name);
-        $this->assertSame(21, $items[0]->quality);
-        $this->assertSame(14, $items[0]->sellIn);
+        $this->assertSame('Backstage passes to a TAFKAL80ETC concert', $item->name);
+        $this->assertSame(21, $item->quality);
+        $this->assertSame(14, $item->sellIn);
     }
 
     public function testTicketFastIncrease(): void
     {
-        $items = [new Item('Backstage passes to a TAFKAL80ETC concert', 8, 20)];
+        $item = new Ticket('Backstage passes to a TAFKAL80ETC concert', 8, 20);
 
-        $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
+        $item->update();
 
-        $this->assertSame('Backstage passes to a TAFKAL80ETC concert', $items[0]->name);
-        $this->assertSame(22, $items[0]->quality);
-        $this->assertSame(7, $items[0]->sellIn);
+        $this->assertSame('Backstage passes to a TAFKAL80ETC concert', $item->name);
+        $this->assertSame(22, $item->quality);
+        $this->assertSame(7, $item->sellIn);
     }
 }

@@ -8,6 +8,9 @@ use GildedRose\GameItem;
 
 class Brie extends GameItem
 {
+    /**
+     * update item
+     */
     public function update(): void
     {
         parent::update();

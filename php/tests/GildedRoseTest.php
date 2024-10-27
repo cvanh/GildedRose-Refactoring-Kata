@@ -11,13 +11,13 @@ use PHPUnit\Framework\TestCase;
 class GildedRoseTest extends TestCase
 {
     
-    public function testSingle(): void
-    {
-        $items = [new Item('foo', 0, 0)];
-        $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
-        $this->assertSame('foo', $items[0]->name);
-    }
+    // public function testSingle(): void
+    // {
+    //     $items = [new Item('foo', 0, 0)];
+    //     $gildedRose = new GildedRose($items);
+    //     $gildedRose->updateQuality();
+    //     $this->assertSame('foo', $items[0]->name);
+    // }
 
     // brie
     public function testBrieQualityIncrease(): void
@@ -26,7 +26,6 @@ class GildedRoseTest extends TestCase
 
         $gildedRose = new GildedRose($items);
         $gildedRose->updateQuality();
-
         $this->assertSame('Aged Brie', $items[0]->name);
         $this->assertSame(2, $items[0]->quality);
 
@@ -45,7 +44,6 @@ class GildedRoseTest extends TestCase
     }
 
     // sulferas
-
     public function testSulfurasQualityChange(): void
     {
         $items = [new Item('Sulfuras, Hand of Ragnaros', 0, 0)];

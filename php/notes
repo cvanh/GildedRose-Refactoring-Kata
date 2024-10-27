@@ -24,6 +24,10 @@ inscrease by 2 when sellin is between 6-10
 <!-- quality to 0 after concert -->
 
 
-## normal
+## normal item
 normal items decrease in sellin and quality by 1 each day
 quality never drops to 0
+
+
+## todo's 
+- check ticket quality increase between 6-10

@@ -17,18 +17,18 @@ class GameItem extends Item
     }
 
     // if quality is between 0-50 it can be increased
-    public function canQualityBeIncreased()
+    public function canQualityBeIncreased(): bool
     {
         return $this->quality < 50 && $this->quality > -1;
     }
 
     // increase quality defaults to 1
-    public function incrementQuality($increase = 1)
+    public function incrementQuality(int $increase = 1)
     {
         $this->quality = $this->quality + $increase;
     }
 
-    public function isSellNegative()
+    public function isSellNegative(): bool
     {
         return (bool) $this->sellIn < 0;
     }

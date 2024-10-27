@@ -8,11 +8,10 @@ use GildedRose\GameItem;
 
 class Sulfuras extends GameItem
 {
-    public function update()
+    public function update(): void
     {
         parent::update();
 
         // this item doesnt do jack
-        return $this;
     }
 }

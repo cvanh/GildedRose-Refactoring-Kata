@@ -23,15 +23,21 @@ final class GildedRose
         foreach ($this->items as $key => $item) {
             switch ($item->name) {
                 case 'Aged Brie':
-                    $this->items[$key] = (new Brie($item->name, $item->sellIn, $item->quality))->update();
+                    $brie = new Brie($item->name, $item->sellIn, $item->quality);
+                    $brie->update();
+                    $this->items[$key] = $brie;
                     break;
 
                 case 'Backstage passes to a TAFKAL80ETC concert':
-                    $this->items[$key] = (new Ticket($item->name, $item->sellIn, $item->quality))->update();
+                    $ticket = new Ticket($item->name, $item->sellIn, $item->quality);
+                    $ticket->update();
+                    $this->items[$key] = $ticket;
                     break;
 
                 case 'Sulfuras, Hand of Ragnaros':
-                    $this->items[$key] = (new Sulfuras($item->name, $item->sellIn, $item->quality))->update();
+                    $sulfuras = new Sulfuras($item->name, $item->sellIn, $item->quality);
+                    $sulfuras->update();
+                    $this->items[$key] = $sulfuras;
                     break;
 
                 default:

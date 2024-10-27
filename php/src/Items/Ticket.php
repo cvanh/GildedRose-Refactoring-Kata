@@ -8,7 +8,7 @@ use GildedRose\GameItem;
 
 class Ticket extends GameItem
 {
-    public function update()
+    public function update(): void
     {
         parent::update();
 
@@ -29,7 +29,5 @@ class Ticket extends GameItem
             $this->incrementQuality(2);
             $this->sellIn = $this->sellIn - 1;
         }
-
-        return $this;
     }
 }

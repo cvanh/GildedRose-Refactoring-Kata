@@ -12,7 +12,7 @@ class GameItem extends Item
 
     public int $quality;
 
-    public function update()
+    public function update(): void
     {
     }
 
@@ -23,7 +23,7 @@ class GameItem extends Item
     }
 
     // increase quality defaults to 1
-    public function incrementQuality(int $increase = 1)
+    public function incrementQuality(int $increase = 1): void
     {
         $this->quality = $this->quality + $increase;
     }

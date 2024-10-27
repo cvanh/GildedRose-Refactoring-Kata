@@ -10,7 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 class GildedRoseTest extends TestCase
 {
-    
     // public function testSingle(): void
     // {
     //     $items = [new Item('foo', 0, 0)];
@@ -28,7 +27,6 @@ class GildedRoseTest extends TestCase
         $gildedRose->updateQuality();
         $this->assertSame('Aged Brie', $items[0]->name);
         $this->assertSame(2, $items[0]->quality);
-
     }
 
     public function testBrieQualityLimit(): void
@@ -40,7 +38,6 @@ class GildedRoseTest extends TestCase
 
         $this->assertSame('Aged Brie', $items[0]->name);
         $this->assertSame(50, $items[0]->quality);
-
     }
 
     // sulferas
@@ -53,7 +50,6 @@ class GildedRoseTest extends TestCase
 
         $this->assertSame('Sulfuras, Hand of Ragnaros', $items[0]->name);
         $this->assertSame(0, $items[0]->quality);
-
     }
 
     public function testSulfurasSellInChange(): void
@@ -65,7 +61,6 @@ class GildedRoseTest extends TestCase
 
         $this->assertSame('Sulfuras, Hand of Ragnaros', $items[0]->name);
         $this->assertSame(0, $items[0]->quality);
-
     }
 
     // ticket
@@ -79,7 +74,6 @@ class GildedRoseTest extends TestCase
         $this->assertSame('Backstage passes to a TAFKAL80ETC concert', $items[0]->name);
         $this->assertSame(14, $items[0]->quality);
         $this->assertSame(13, $items[0]->sellIn);
-
     }
 
     public function testTicketQualityIncreasesFails(): void
@@ -104,5 +98,21 @@ class GildedRoseTest extends TestCase
         $this->assertSame('Backstage passes to a TAFKAL80ETC concert', $items[0]->name);
         $this->assertSame(22, $items[0]->quality);
         $this->assertSame(7, $items[0]->sellIn);
+    }
+
+    public function testMultipleItems(): void
+    {
+        $items = [
+            new Item('Backstage passes to a TAFKAL80ETC concert', 8, 20),
+            new Item('Sulfuras, Hand of Ragnaros', 0, 0),
+            new Item('Aged Brie', 0, 50),
+        ];
+
+        $gildedRose = new GildedRose($items);
+        $gildedRose->updateQuality();
+
+        $this->assertSame('Backstage passes to a TAFKAL80ETC concert', $items[0]->name);
+        $this->assertSame('Sulfuras, Hand of Ragnaros', $items[1]->name);
+        $this->assertSame('Aged Brie', $items[2]->name);
     }
 }

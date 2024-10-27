@@ -7,10 +7,14 @@ namespace GildedRose;
 class GameItem extends Item
 {
     public string $name;
+
     public int $sellIn;
+
     public int $quality;
 
-    public function update() {}
+    public function update()
+    {
+    }
 
     // if quality is between 0-50 it can be increased
     public function canQualityBeIncreased()
@@ -24,8 +28,8 @@ class GameItem extends Item
         $this->quality = $this->quality + $increase;
     }
 
-    public function isSellNegative(){
+    public function isSellNegative()
+    {
         return (bool) $this->sellIn < 0;
     }
-
 }

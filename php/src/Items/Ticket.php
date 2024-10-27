@@ -26,7 +26,6 @@ class Ticket extends GameItem
         if (($this->sellIn < 6 | $this->sellIn < 11) &&
             $this->canQualityBeIncreased()
         ) {
-
             $this->incrementQuality(2);
             $this->sellIn = $this->sellIn - 1;
         }

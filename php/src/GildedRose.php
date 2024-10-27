@@ -15,7 +15,8 @@ final class GildedRose
      */
     public function __construct(
         private array &$items
-    ) {}
+    ) {
+    }
 
     public function updateQuality(): void
     {
@@ -29,7 +30,7 @@ final class GildedRose
                     $this->items[$key] = (new Ticket($item->name, $item->sellIn, $item->quality))->update();
                     break;
 
-                case "Sulfuras, Hand of Ragnaros": 
+                case 'Sulfuras, Hand of Ragnaros':
                     $this->items[$key] = (new Sulfuras($item->name, $item->sellIn, $item->quality))->update();
                     break;
 

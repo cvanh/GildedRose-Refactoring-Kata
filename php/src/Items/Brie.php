@@ -8,11 +8,12 @@ use GildedRose\GameItem;
 
 class Brie extends GameItem
 {
-    public function update() {
+    public function update()
+    {
         parent::update();
 
         // xdebug_break();
-        if($this->canQualityBeIncreased()){
+        if ($this->canQualityBeIncreased()) {
             $this->incrementQuality(2);
         }
 

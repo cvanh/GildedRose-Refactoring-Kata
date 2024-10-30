@@ -7,9 +7,7 @@ namespace GildedRose;
 class GameItem extends Item
 {
     public string $name;
-
     public int $sellIn;
-
     public int $quality;
 
     public function update(): void

@@ -20,6 +20,7 @@ class Ticket extends GameItem
             return;
         }
 
+        // increase quality by 1 when sellin is lower then 10
         if ($this->sellIn > 11 && $this->canQualityBeIncreased()) {
             $this->incrementQuality();
             $this->sellIn = $this->sellIn - 1;

@@ -42,12 +42,12 @@ class GameItem extends Item
      */
     public function isSellNegative(): bool
     {
-        return (bool) $this->sellIn < 0;
+        return $this->sellIn < 0;
     }
 
     /**
      * check if quality is negative
-     *
+     * @todo should use constant for min 
      * @return boolean
      */
     public function isQualityNegative(): bool

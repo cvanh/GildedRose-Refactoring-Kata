@@ -32,7 +32,7 @@ class GameItemTest extends TestCase
     public function testIsSellNegativeWhenNegative(): void
     {
         $item = new GameItem('Aged Brie', -1, 0);
-        $this->assertFalse($item->isSellNegative());
+        $this->assertTrue($item->isSellNegative());
     }
 
     public function testIsSellNegativeWhenPositive(): void

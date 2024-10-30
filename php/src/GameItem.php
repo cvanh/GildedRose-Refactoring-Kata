@@ -44,4 +44,26 @@ class GameItem extends Item
     {
         return (bool) $this->sellIn < 0;
     }
+
+    /**
+     * check if quality is negative
+     *
+     * @return boolean
+     */
+    public function isQualityNegative(): bool
+    {
+        return (bool) $this->quality < -1;
+    }
+
+    /**
+     * check if quality is between 0-50
+     *
+     * @return boolean
+     */
+    public function canSellInBeIncreased(): bool
+    {
+        return $this->sellIn < 50 && $this->sellIn > -1;
+    }
+
+    // TODO add methods for manipulating values
 }

@@ -40,4 +40,16 @@ class GameItemTest extends TestCase
         $item = new GameItem('Aged Brie', 10, 0);
         $this->assertFalse($item->isSellNegative());
     }
+
+    public function testIsQualityNegativeWhenNegative(): void
+    {
+        $item = new GameItem('Aged Brie', 0, -1);
+        $this->assertFalse($item->isQualityNegative());
+    }
+
+    public function testIsQualityNegativeWhenPositive(): void
+    {
+        $item = new GameItem('Aged Brie', 0, 10);
+        $this->assertFalse($item->isQualityNegative());
+    }
 }
